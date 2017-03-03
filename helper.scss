@@ -1,0 +1,133 @@
+//unitporem
+
+@for $i from 1 through 3 {
+    .font-size-#{$i} {
+        font-size: #{$i}px;
+        
+    }
+}
+@for $i from 0 through 20{
+
+    .line-height-#{$i} {
+       line-height:#{$i/10};
+        
+    }
+}
+@for $i from 1 through 9{
+ 
+    .font-weight-#{$i} {
+     font-weight:#{$i*100};
+        
+    }
+}
+
+$column: 5;
+
+@while $column > 0 {
+  .cols-#{$column} {
+    width: 10px * $column;
+  }
+  $column: $column - 1;
+}
+
+@while $column > 0 {
+  .colss-#{$column} {
+    width: 1px * $column;
+  }
+  $column: $column - 1;
+}
+
+%grid {
+  overflow: hidden;
+
+  %column {
+    min-height: 1px;
+  }
+
+  // @for $i from 1 through 12 {
+  //   %columns-#{$i} {
+  //     width: ((100 / 12) * $i) * 1%;
+  //   }
+  // }
+}
+
+.foo, 
+.bar {
+  // @extend %grid; 
+}
+
+.baz {
+  // @extend %column;
+  // @extend %columns-5;
+}
+
+.qux {
+  @extend %column;
+  // @extend %columns-3;
+}//unitporem
+
+@for $i from 1 through 3 {
+    .font-size-#{$i} {
+        font-size: #{$i}px;
+        
+    }
+}
+@for $i from 0 through 20{
+
+    .line-height-#{$i} {
+       line-height:#{$i/10};
+        
+    }
+}
+@for $i from 1 through 9{
+ 
+    .font-weight-#{$i} {
+     font-weight:#{$i*100};
+        
+    }
+}
+
+$column: 5;
+
+@while $column > 0 {
+  .cols-#{$column} {
+    width: 10px * $column;
+  }
+  $column: $column - 1;
+}
+
+@while $column > 0 {
+  .colss-#{$column} {
+    width: 1px * $column;
+  }
+  $column: $column - 1;
+}
+
+%grid {
+  overflow: hidden;
+
+  %column {
+    min-height: 1px;
+  }
+
+  // @for $i from 1 through 12 {
+  //   %columns-#{$i} {
+  //     width: ((100 / 12) * $i) * 1%;
+  //   }
+  // }
+}
+
+.foo, 
+.bar {
+  // @extend %grid; 
+}
+
+.baz {
+  // @extend %column;
+  // @extend %columns-5;
+}
+
+.qux {
+  @extend %column;
+  // @extend %columns-3;
+}
