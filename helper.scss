@@ -101,6 +101,7 @@ $column: 5;
     width: 1px * $column;
   }
   $column: $column - 1;
+  
 }
 
 %grid {
@@ -131,3 +132,39 @@ $column: 5;
   @extend %column;
   // @extend %columns-3;
 }
+
+
+
+$nudge:10px;
+$abrivations:(margin: m, padding: p);
+@for $i from 1 through 3 {
+    .item-#{$i} {}
+    @each $prop,
+    $abbrev in $abrivations {
+        .#{$abbrev}-#{$i} {
+            #{$prop}: $i*$nudge $i*$nudge !important;
+        } // a = All sides
+        .#{$abbrev}t-#{$i} {
+            #{$prop}-top: $i*$nudge !important;
+        }
+        .#{$abbrev}r-#{$i} {
+            #{$prop}-right: $i*$nudge !important;
+        }
+        .#{$abbrev}b-#{$i} {
+            #{$prop}-bottom: $i*$nudge !important;
+        }
+        .#{$abbrev}l-#{$i} {
+            #{$prop}-left: $i*$nudge !important;
+        }
+        
+        .#{$abbrev}x-#{$i} {
+            #{$prop}-right: $i*$nudge !important;
+            #{$prop}-left: $i*$nudge !important;
+        }
+        .#{$abbrev}y-#{$i} {
+            #{$prop}-top: $i*$nudge !important;
+            #{$prop}-bottom: $i*$nudge !important;
+        }
+    }
+}
+
